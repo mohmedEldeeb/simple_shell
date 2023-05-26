@@ -13,7 +13,7 @@
 #include <fcntl.h>
 
 
-extern char **var_environ;
+extern char **environ;
 
 /**
  * struct liststring - to singly linked list
