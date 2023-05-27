@@ -45,7 +45,7 @@ int main(int args, char **arg)
 		info_data->readfd = fd;
 	}
 	populate_env_list(info_data);
-
+	read_history(info_data);
 
 	return (0);
 }
