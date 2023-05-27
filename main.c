@@ -8,7 +8,6 @@
  * main - entry point simple shell project
  * @args: the arg count
  * @arg the arg vector
- *
  * Return: 0 on success, 1 on error
  */
 
@@ -46,6 +45,6 @@ int main(int args, char **arg)
 	}
 	populate_env_list(info_data);
 	read_history(info_data);
-
+	to_hsh(info_data);
 	return (0);
 }

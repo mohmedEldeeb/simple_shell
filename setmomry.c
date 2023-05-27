@@ -16,3 +16,20 @@ char *_memset(char *s, char b, unsigned int n)
 		s[x] = b;
 	return (s);
 }
+
+/**
+ * bfree - frees a pointer and NULLs the address
+ * @pt: address of the pointer to free
+ *
+ * Return: 1, otherwise 0.
+ */
+int bfree(void **pt)
+{
+	if (pt && *pt)
+	{
+		free(*pt);
+		*pt = NULL;
+		return (1);
+	}
+	return (0);
+}

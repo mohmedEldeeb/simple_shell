@@ -1,5 +1,28 @@
 #include "shell.h"
 
+/**
+ * free_list - frees nodes of a list
+ * @head_ptr: address pointer to head node
+ *
+ * Return: no
+ */
+void free_list(list_t **head_ptr)
+{
+	list_t *next_node, *head, *node;
+
+	if (!head_ptr || !*head_ptr)
+		return;
+	head = *head_ptr;
+	node = head;
+	while (node)
+	{
+		next_node = node->next;
+		free(node->str);
+		free(node);
+		node = next_node;
+	}
+	*head_ptr = NULL;
+}
 
 /**
  * node_end - adds a node to the end of the list

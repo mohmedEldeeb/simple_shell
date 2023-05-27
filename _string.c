@@ -28,26 +28,7 @@ char *_strdup(const char *strn)
 	return (result);
 }
 
-/**
- * _strcat - concatenates two strings
- * @dest: destination buffer
- * @src: source buffer
- *
- * Return: pointer to destination buffer
- */
 
-char *_strcat(char *dest, char *src)
-{
-	char *result = dest;
-
-	while (*dest)
-		dest++;
-	while (*src)
-		*dest++ = *src++;
-	*dest = *src;
-
-	return (result);
-}
 
 #include "shell.h"
 

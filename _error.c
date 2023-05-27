@@ -1,5 +1,22 @@
 #include "shell.h"
 
+/**
+ * remove_comments - this function replaces
+ * @buf: address of the string to modify
+ *
+ * Return: Always 0;
+ */
+void remove_comments(char *buf)
+{
+	int i;
+
+	for (i = 0; buf[i] != '\0'; i++)
+		if (buf[i] == '#' && (!i || buf[i - 1] == ' '))
+		{
+			buf[i] = '\0';
+			break;
+		}
+}
 
 /**
  * _eputchar - writes the character c to stderr
