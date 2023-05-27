@@ -18,3 +18,25 @@ int populate_env_list(info_t *infos)
 	infos->env = n;
 	return (0);
 }
+
+/**
+ * _getenv - gets the value environ variable
+ * @info: Structure containing potential arguments
+ * @name: env var name
+ *
+ * Return: value env
+ */
+char *_togetenv(info_t *info, const char *name)
+{
+	list_t *n = info->env;
+	char *p;
+
+	while (n)
+	{
+		p = starts_with(n->str, name);
+		if (p && *p)
+			return (p);
+		n = n->next;
+	}
+	return (NULL);
+}

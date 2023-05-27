@@ -85,18 +85,27 @@ void _eputs(char *str);
 
 
 /* file **** _string.c*/
-
+int _strlen(char *s);
 char *_strdup(const char *strn);
-
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, char *src);
+char *starts_with(const char *, const char *);
 
 /* file invire *** inviro.c */
-
+char *_togetenv(info_t *info, const char *name);
 int populate_env_list(info_t *infos);
 
 /*  file list.c */
 list_t *node_end(list_t **head, const char *str, int num);
+int delete_node_at_index(list_t **head, unsigned int index);
 
 /* file memory.c*/
 char *_memset(char *s, char b, unsigned int n);
+
+/* file history.c */
+int read_history(info_t *infos);
+int build_history_list(info_t *info, char *buf, int linecount);
+char *get_history_file(info_t *info);
+
 
 #endif
